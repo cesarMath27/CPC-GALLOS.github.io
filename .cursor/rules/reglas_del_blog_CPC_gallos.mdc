@@ -1,0 +1,58 @@
+---
+description: Reglas de edición, formato y creación de posts para el blog Jekyll (Chirpy) de CPC-GALLOS.
+globs: **/*.{md,markdown,yml,yaml,html,js}
+alwaysApply: true
+---
+
+# Reglas del Proyecto: Blog CPC-GALLOS
+
+Este proyecto es un blog construido con Jekyll y el tema Chirpy para el Club de Programación Competitiva GALLOS. Al interactuar con este proyecto, la IA debe adherirse estrictamente a las siguientes convenciones:
+
+## 1. Convenciones de Posts (Front Matter, Nombres de archivo, Idioma)
+
+- **Idioma:** El contenido principal del blog debe estar en **Español**. Los fragmentos de código, variables y comentarios técnicos pueden estar en **Inglés** o **C++**.
+- **Ubicación:** Todos los posts deben crearse dentro del directorio `_posts/`.
+- **Nomenclatura de archivos:** Deben seguir estrictamente el formato `YYYY-MM-DD-Titulo_Con_Guiones_Bajos.md`.
+- **Front Matter:** Todo nuevo post DEBE incluir el siguiente bloque YAML inicial sin excepciones:
+  ```yaml
+  ---
+  title: "Título del post"
+  description: "Breve descripción del contenido"
+  date: YYYY-MM-DD HH:MM:SS +/-TTTT
+  categories: [Categoría] # Ej: [Club], [Recursos], etc.
+  author: author_id # IMPORTANTE: Debe coincidir con un ID existente en _data/authors.yml
+  tags: [tag1, tag2] # Siempre en minúsculas y separados por comas
+  pin: false
+  mermaid: false
+  image: /assets/img/posts/nombre-de-imagen.png
+  ---
+  ```
+
+## 2. Rutas Importantes y su Propósito
+
+- `_posts/`: Única carpeta autorizada para crear los artículos y entradas del blog.
+- `_tabs/`: Contiene las páginas principales del menú (como "About").
+- `_data/`: Almacena configuraciones de datos, como `authors.yml`.
+- `assets/img/posts/`: Único directorio permitido para guardar y referenciar imágenes de los artículos.
+
+## 3. Archivos Críticos (NO TOCAR SIN REVISIÓN HUMANA)
+
+La IA tiene prohibido modificar los siguientes archivos y directorios a menos que el usuario lo solicite explícitamente y se realice una revisión humana:
+- `_config.yml`: Configuración central del blog.
+- `.github/workflows/` (CI/CD): Flujos de trabajo de GitHub Actions.
+- `_layouts/` e `_includes/`: Plantillas base de la estructura del tema Chirpy.
+- `assets/img/favicons/`: Nunca agregar ni modificar imágenes aquí.
+
+## 4. Consumo de API (fetch)
+
+- **Cuándo hacer fetch:** Únicamente cuando sea necesario obtener datos dinámicos externos que no puedan ser procesados en el build de Jekyll.
+- **Cómo hacerlo:** Utiliza siempre llamadas asíncronas (`async/await`), maneja correctamente los errores con bloques `try/catch` y asegúrate de validar el estado de la respuesta (`response.ok`). Maneja los tiempos de espera y fallos de red de manera elegante sin romper la UI.
+
+## 5. Pruebas y Validación
+
+- Antes de dar por terminada la propuesta de cambios o preparar un Pull Request, siempre se debe compilar el sitio y validar los enlaces.
+- **Comando de validación:** Sugiere al usuario ejecutar `bundle exec htmlproofer _site ...` para comprobar localmente que no haya enlaces rotos ni HTML malformado.
+
+## 6. Enlaces e Imágenes
+
+- **Protocolo de Enlaces:** Todos los enlaces salientes DEBEN usar explícitamente `https://`. Está estrictamente prohibido usar `http://`.
