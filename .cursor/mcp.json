@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "description": "Permite al agente interactuar con el repositorio de GitHub de CPC-GALLOS para revisar PRs, issues y ramas.",
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<TU_TOKEN_AQUI>"
+      }
+    },
+    "filesystem-restricted": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "_posts",
+        "_tabs",
+        "assets/img/posts"
+      ],
+      "description": "Proporciona acceso seguro de lectura/escritura únicamente a las carpetas permitidas para la creación de contenido, bloqueando el acceso a configuraciones core (_config.yml, layouts)."
+    },
+    "jekyll-tools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "description": "Servidor de razonamiento secuencial para ayudar a la IA a planear la estructura de posts largos o traducciones complejas antes de escribir archivos."
+    }
+  }
+}
