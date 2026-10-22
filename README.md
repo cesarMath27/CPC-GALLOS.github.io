@@ -7,6 +7,8 @@ Este sitio está construido con [Jekyll](https://jekyllrb.com/) utilizando el te
 > [!IMPORTANT]
 > **¡Buscamos contribuidores y mantenedores!**
 > Se aceptan Pull Requests (PR) tanto de miembros del club como de personas ajenas a él. Todos los cambios propuestos son bienvenidos; deja tu PR y a la brevedad será analizado y mergeado.
+>
+> Para empezar, consulta la [guía para contribuir](CONTRIBUTING.md) y el [flujo de trabajo con asistentes de IA](docs/ai-workflow.md).
 
 ---
 
