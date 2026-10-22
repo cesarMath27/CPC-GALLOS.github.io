@@ -22,6 +22,14 @@ Esta guía reúne las convenciones del repositorio para que una persona o un asi
 
 El sitio es un blog de programación competitiva construido con Jekyll y el tema Chirpy. El contenido editorial se redacta principalmente en español; conserva en inglés los nombres propios, APIs y el código cuando corresponda. Usa enlaces externos con `https://`.
 
+## GitNexus: inteligencia de código vía MCP
+
+GitNexus indexa el repositorio como un grafo consultable y ofrece sus consultas a los asistentes mediante MCP. En este proyecto puede ayudar a explorar las relaciones detectadas entre posts, layouts y archivos JavaScript, además de seguir cadenas de llamadas y dependencias. El resultado depende de qué archivos y relaciones reconozca el índice; confirma siempre los hallazgos en los archivos fuente.
+
+GitNexus se puede integrar con clientes como Cursor y Claude Code. Para explorar el repositorio, pide al asistente que consulte el grafo antes de proponer cambios y que indique las rutas relevantes. Después de cambios de código, actualiza Graphify con `graphify update .` y vuelve a indexar GitNexus con `gitnexus analyze` si la configuración local lo requiere.
+
+Más información: [GitNexus en GitHub](https://github.com/abhigyanpatwari/GitNexus).
+
 ## Reglas para crear un post
 
 Usa el front matter que esperan las reglas del blog. Comprueba los campos y ejemplos actuales en `.cursor/rules/` antes de crear el archivo; normalmente incluyen título, descripción, fecha, categorías, autor, etiquetas y opciones de visualización. Mantén las etiquetas en minúsculas y verifica el identificador del autor. Guarda las imágenes únicamente en `assets/img/posts/` y enlázalas con una ruta válida del repositorio.
@@ -67,6 +75,10 @@ Puedes copiar estos ejemplos y reemplazar el texto entre corchetes:
 ### Entender una parte del repositorio
 
 > Explícame cómo funciona **[componente o flujo]** en este repositorio. Consulta Graphify o GitNexus si están disponibles y luego verifica la explicación en los archivos fuente. Incluye las rutas relevantes, el recorrido principal y cualquier supuesto; no modifiques archivos.
+
+### Consultar GitNexus
+
+> Usa GitNexus vía MCP para investigar cómo se relacionan **[post, layout o archivo JavaScript]** y qué dependencias o cadenas de llamadas lo conectan con **[otro elemento]**. Resume las rutas que encuentres, verifica la respuesta en los archivos fuente y señala si el índice no cubre alguna parte. No modifiques archivos.
 
 ### Cambiar una pestaña
 
